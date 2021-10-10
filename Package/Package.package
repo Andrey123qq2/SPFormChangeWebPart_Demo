@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="c0aa55e7-6d99-4d08-9692-baa10d6662c3" solutionId="c0aa55e7-6d99-4d08-9692-baa10d6662c3" resetWebServer="false" sharePointProductVersion="15.0" name="FormChangeWebPart" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="77284712-b2c3-4b9a-b55e-47fbdd9277b9" />
+  </features>
+  <projectItems>
+    <projectItemReference itemId="27e45b62-aa26-418f-b541-130e2ad7a089" />
+  </projectItems>
+</package>

@@ -1,0 +1,9 @@
+{
+  "version": "v1",
+  "packages": {
+    "spform-field-wrapper": {
+      "signature": "fab17ee83c278df90a83265920105b60",
+      "file": true
+    }
+  }
+}

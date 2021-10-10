@@ -1,0 +1,33 @@
+{
+  "name": "formchangewebpart",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.deps.ua:SharePoint/CSharp/FormsChangeWebPart.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/microsoft-ajax": "0.0.36",
+    "@types/sharepoint": "^2016.1.9",
+    "autocompleter": "^6.1.0",
+    "css-loader": "^5.2.0",
+    "style-loader": "^2.0.0",
+    "ts-loader": "^8.0.17",
+    "typescript": "^4.2.3",
+    "webpack": "^5.24.4",
+    "webpack-cli": "^4.5.0"
+  },
+  "dependencies": {
+    "element-closest": "^3.0.2",
+    "element-closest-polyfill": "^1.0.2",
+    "es6-promise": "^4.2.8",
+    "map-polyfill": "0.0.1",
+    "spform-field-wrapper": "file:.yalc/spform-field-wrapper"
+  }
+}

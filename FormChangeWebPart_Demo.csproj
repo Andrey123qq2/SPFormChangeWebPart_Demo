@@ -1,0 +1,144 @@
+﻿<Project ToolsVersion="16.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7BB7D50B-E44F-4A1D-806E-4AB60692618A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FormChangeWebPart</RootNamespace>
+    <AssemblyName>FormChangeWebPart_Demo</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetOfficeVersion>15.0</TargetOfficeVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SandboxedSolution>False</SandboxedSolution>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.SharePoint" />
+    <Reference Include="Microsoft.SharePoint.Client.ServerRuntime" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FormChangeVisualWebPart\CustomToolPart.cs" />
+    <Compile Include="FormChangeVisualWebPart\FormChangeVisualWebPart.ascx.cs">
+      <DependentUpon>FormChangeVisualWebPart.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="FormChangeVisualWebPart\FormChangeVisualWebPart.ascx.g.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FormChangeVisualWebPart.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Features\Feature1\Feature1.feature">
+      <FeatureId>{77284712-b2c3-4b9a-b55e-47fbdd9277b9}</FeatureId>
+    </None>
+    <None Include="FormChangeVisualWebPart\FormChangeVisualWebPart.webpart" />
+    <None Include="FormChangeVisualWebPart\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{96de428a-2b8a-496b-9300-56fe901f5eb9}</SharePointProjectItemId>
+    </None>
+    <None Include="key.snk" />
+    <None Include="Layouts\FormChangeWebPart\bundle.js.map" />
+    <None Include="Layouts\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{27e45b62-aa26-418f-b541-130e2ad7a089}</SharePointProjectItemId>
+    </None>
+    <None Include="package.json" />
+    <None Include="packages.config" />
+    <None Include="Package\Package.package">
+      <PackageId>{c0aa55e7-6d99-4d08-9692-baa10d6662c3}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+    <None Include="README.md" />
+    <None Include="tsconfig.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Features\Feature1\Feature1.Template.xml">
+      <DependentUpon>Feature1.feature</DependentUpon>
+    </Content>
+    <Content Include="FormChangeVisualWebPart\Elements.xml" />
+    <Content Include="FormChangeVisualWebPart\FormChangeVisualWebPart.ascx">
+      <Generator>SharePointWebPartCodeGenerator</Generator>
+      <LastGenOutput>FormChangeVisualWebPart.ascx.g.cs</LastGenOutput>
+    </Content>
+    <Content Include="Layouts\FormChangeWebPart\bundle.js" />
+    <Content Include="Layouts\FormChangeWebPart\SaveWOCloseRedirect.html" />
+    <TypeScriptCompile Include="src\ComponentsListToLoad.ts" />
+    <TypeScriptCompile Include="src\components\CustomForm.ts" />
+    <TypeScriptCompile Include="src\components\ListItem.ts" />
+    <TypeScriptCompile Include="src\helpers\SPFormHelpers.ts" />
+    <TypeScriptCompile Include="src\helpers\SPListItemWrapper.ts" />
+    <TypeScriptCompile Include="src\helpers\SPListWrapper.ts" />
+    <TypeScriptCompile Include="src\helpers\TabsManager\TabItem.ts" />
+    <TypeScriptCompile Include="src\helpers\TabsManager\TabItemCollapse.ts" />
+    <TypeScriptCompile Include="src\helpers\TabsManager\TabsManager.ts" />
+    <TypeScriptCompile Include="src\WebPartComponentsManager.ts" />
+    <TypeScriptCompile Include="src\components\AutoCompleteInputs.ts" />
+    <TypeScriptCompile Include="src\components\ShowElementsBySelect.ts" />
+    <TypeScriptCompile Include="src\components\SetTitle.ts" />
+    <TypeScriptCompile Include="src\helpers\interfaces\IDictionary.ts" />
+    <TypeScriptCompile Include="src\WebPartManager.ts" />
+    <TypeScriptCompile Include="src\components\ShowElementsByGroups.ts" />
+    <TypeScriptCompile Include="src\prototypes\formatWithArray.ts" />
+    <Content Include="Layouts\FormChangeWebPart\TabsManager.css" />
+    <Content Include="src\polyfills\functionNameIE.js" />
+    <Content Include="src\polyfills\newEvent.js" />
+    <Content Include="src\polyfills\nodeAfter.js" />
+    <Content Include="src\polyfills\nodePrepend.js" />
+    <Content Include="src\polyfills\nodeRemove.js" />
+    <Content Include="webpack.config.js" />
+    <TypeScriptCompile Include="src\helpers\PrincipalsHelper.ts" />
+    <TypeScriptCompile Include="src\components\IWebPartComponent.ts" />
+    <TypeScriptCompile Include="src\prototypes\prototypes.d.ts" />
+    <TypeScriptCompile Include="src\helpers\Util.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\typings\microsoft-ajax\microsoft.ajax.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\sharepoint\SharePoint.d.ts" />
+    <TypeScriptCompile Include="src\Main.ts" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+</Project>
